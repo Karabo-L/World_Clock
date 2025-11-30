@@ -24,6 +24,19 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  //Dubai
+  let DubaiElement = document.querySelector("#Dubai");
+  if (DubaiElement) {
+    let DubaiDateElement = DubaiElement.querySelector(".date");
+    let DubaiTimeElement = DubaiElement.querySelector(".time");
+    let DubaiTime = moment().tz("Asia/Dubai");
+
+    DubaiDateElement.innerHTML = DubaiTime.format("MMMM Do YYYY");
+    DubaiTimeElement.innerHTML = DubaiTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 updateTime();
 setInterval(updateTime, 1000);
